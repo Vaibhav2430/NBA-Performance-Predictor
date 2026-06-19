@@ -5,20 +5,25 @@ export default function PlayerSearch({ onSearch, loading, league }) {
   const [query, setQuery]       = useState('')
   const [suggestions, setSugg]  = useState([])
   const [showSugg, setShowSugg] = useState(false)
-  const debounce = useRef(null)
+  const debounce    = useRef(null)
+  const didMount    = useRef(false)
+
+  async function fetchSuggestions(q) {
+    try {
+      const endpoint = league === 'WNBA' ? '/wnba/search' : '/search'
+      const res = await axios.get(endpoint, { params: { q } })
+      setSugg(res.data)
+      setShowSugg(true)
+    } catch {
+      setSugg([])
+    }
+  }
 
   useEffect(() => {
-    if (query.length < 2) { setSugg([]); return }
+    if (!didMount.current) return
     clearTimeout(debounce.current)
-    debounce.current = setTimeout(async () => {
-      try {
-        const endpoint = league === 'WNBA' ? '/wnba/search' : '/search'
-        const res = await axios.get(endpoint, { params: { q: query } })
-        setSugg(res.data)
-        setShowSugg(true)
-      } catch { setSugg([]) }
-    }, 250)
-  }, [query])
+    debounce.current = setTimeout(() => fetchSuggestions(query), query ? 200 : 0)
+  }, [query, league])
 
   function submit(name) {
     const t = (name ?? query).trim()
@@ -26,6 +31,18 @@ export default function PlayerSearch({ onSearch, loading, league }) {
     setQuery(t)
     setShowSugg(false)
     onSearch(t)
+  }
+
+  function handleFocus() {
+    if (!didMount.current) {
+      didMount.current = true
+      return
+    }
+    if (suggestions.length > 0) {
+      setShowSugg(true)
+    } else {
+      fetchSuggestions(query)
+    }
   }
 
   return (
@@ -39,11 +56,10 @@ export default function PlayerSearch({ onSearch, loading, league }) {
           value={query}
           onChange={e => setQuery(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && submit()}
-          onFocus={() => suggestions.length && setShowSugg(true)}
+          onFocus={handleFocus}
           onBlur={() => setTimeout(() => setShowSugg(false), 150)}
           placeholder={league === 'WNBA' ? 'Search player — e.g. Caitlin Clark, A\'ja Wilson…' : 'Search player — e.g. LeBron James, Steph Curry…'}
           disabled={loading}
-          autoFocus
         />
         {showSugg && suggestions.length > 0 && (
           <ul className="dropdown">

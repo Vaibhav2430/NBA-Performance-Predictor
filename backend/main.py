@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from nba_api.stats.static import players as nba_players
 from nba_api.live.nba.endpoints import scoreboard as live_scoreboard
-from model import predict, find_player
+from model import predict
 import wnba_model
 
 app = FastAPI(title="NBA Stat Predictor API")
@@ -27,18 +27,17 @@ def predict_endpoint(player: str = Query(..., description="Player full name")):
 
 
 @app.get("/search")
-def search_endpoint(q: str = Query(..., min_length=2)):
+def search_endpoint(q: str = Query(default="")):
+    all_players = sorted(p["full_name"] for p in nba_players.get_players() if p["is_active"])
+    if not q:
+        return all_players[:50]
     q_lower = q.lower()
-    matches = [
-        p["full_name"]
-        for p in nba_players.get_players()
-        if q_lower in p["full_name"].lower()
-    ]
-    return sorted(matches)[:10]
+    matches = [name for name in all_players if q_lower in name.lower()]
+    return matches[:15]
 
 
 @app.get("/wnba/search")
-def wnba_search(q: str = Query(..., min_length=2)):
+def wnba_search(q: str = Query(default="")):
     return wnba_model.search_players(q)
 
 

@@ -34,10 +34,6 @@ export default function App() {
     }
   }
 
-  const isHot = data
-    ? data.predictions.PTS.last5_avg > data.predictions.PTS.season_avg
-    : false
-
   const hasResults = data && !loading
   const isWNBA     = league === 'WNBA'
 
@@ -53,8 +49,10 @@ export default function App() {
 
   function rankClass(rank) {
     if (!rank) return 'rank-mid'
-    if (rank <= 10) return 'rank-good'
-    if (rank >= 21) return 'rank-bad'
+    const total = isWNBA ? 15 : 30
+    const third = total / 3
+    if (rank <= third) return 'rank-good'
+    if (rank > third * 2) return 'rank-bad'
     return 'rank-mid'
   }
 
@@ -131,15 +129,6 @@ export default function App() {
                       {' · '}{data.season} · {data.games_used} games analyzed
                     </div>
                   </div>
-                </div>
-                <div style={{ display: 'flex', gap: 7 }}>
-                  {isHot && <span className="badge badge-orange">🔥 Hot Streak</span>}
-                  <span className="badge" style={isWNBA
-                    ? { background: 'rgba(168,85,247,0.12)', color: '#c084fc', border: '1px solid rgba(168,85,247,0.25)' }
-                    : { background: 'rgba(34,197,94,0.1)', color: 'var(--green)', border: '1px solid rgba(34,197,94,0.22)' }
-                  }>
-                    {isWNBA ? '♀ WNBA' : '✓ NBA'} · AI Prediction
-                  </span>
                 </div>
               </div>
 

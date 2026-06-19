@@ -7,14 +7,22 @@ function oppLogoUrl(abbr, isWNBA) {
   return `https://a.espncdn.com/i/teamlogos/nba/500/${espn}.png`
 }
 
-function RankPill({ label, rank }) {
+function rankClass(rank, total) {
+  if (!rank) return 'rank-mid'
+  const third = total / 3
+  if (rank <= third) return 'rank-good'
+  if (rank > third * 2) return 'rank-bad'
+  return 'rank-mid'
+}
+
+function RankPill({ label, rank, total }) {
   if (rank == null) return null
-  const cls = rank <= 10 ? 'rank-good' : rank >= 21 ? 'rank-bad' : 'rank-mid'
-  return <span className={`rank-badge ${cls}`}>{label} #{rank}</span>
+  return <span className={`rank-badge ${rankClass(rank, total)}`}>{label} #{rank}</span>
 }
 
 export default function GameLogTable({ gameLog, predictions, league }) {
   const isWNBA = league === 'WNBA'
+  const totalTeams = isWNBA ? 15 : 30
 
   return (
     <div className="table-wrap">
@@ -49,8 +57,8 @@ export default function GameLogTable({ gameLog, predictions, league }) {
                     <div className="matchup-info">
                       <span className="matchup-name">{abbr || matchupLabel}</span>
                       <div className="matchup-ranks">
-                        <RankPill label="OFF" rank={row.OPP_OFF_RANK} />
-                        <RankPill label="DEF" rank={row.OPP_DEF_RANK} />
+                        <RankPill label="OFF" rank={row.OPP_OFF_RANK} total={totalTeams} />
+                        <RankPill label="DEF" rank={row.OPP_DEF_RANK} total={totalTeams} />
                       </div>
                     </div>
                   </div>

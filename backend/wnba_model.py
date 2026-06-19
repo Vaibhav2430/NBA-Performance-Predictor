@@ -59,11 +59,12 @@ def _build_player_cache() -> dict:
 
 
 def search_players(query: str) -> list[str]:
-    cache  = _build_player_cache()
-    q      = query.lower().strip()
-    return sorted(
-        p["full_name"] for p in cache.values() if q in p["full_name"].lower()
-    )[:10]
+    cache = _build_player_cache()
+    q     = query.lower().strip()
+    all_names = sorted(p["full_name"] for p in cache.values())
+    if not q:
+        return all_names
+    return [name for name in all_names if q in name.lower()][:15]
 
 
 def find_player(name: str) -> dict | None:
@@ -77,35 +78,27 @@ def find_player(name: str) -> dict | None:
 
 def fetch_wnba_team_stats() -> dict:
     """Returns {team_abbr: {team_name, off_pts, def_pts, off_rank, def_rank}}."""
-    teams_r = requests.get(f"{ESPN_BASE}/teams", timeout=10)
-    teams   = teams_r.json()["sports"][0]["leagues"][0]["teams"]
+    ESPN_WEB_V2 = "https://site.web.api.espn.com/apis/v2/sports/basketball/wnba"
+    r = requests.get(f"{ESPN_WEB_V2}/standings", timeout=10, params={"seasontype": 2})
+    r.raise_for_status()
+    data = r.json()
+
     raw: dict = {}
-    for t in teams:
-        team  = t["team"]
-        abbr  = team.get("abbreviation", "")
-        tid   = team["id"]
-        name  = team.get("displayName", abbr)
-        time.sleep(0.2)
-        try:
-            r = requests.get(f"{ESPN_BASE}/teams/{tid}/statistics", timeout=10)
-            if r.status_code != 200:
-                continue
-            flat: dict = {}
-            for cat in r.json().get("results", {}).get("stats", {}).get("categories", []):
-                for s in cat.get("stats", []):
-                    flat[s.get("name", "").lower()] = float(s.get("value", 0) or 0)
-            off_pts = (flat.get("avgpoints") or flat.get("pointspergame") or
-                       flat.get("avgpointspergame") or flat.get("scoringaverage"))
-            def_pts = (flat.get("avgpointsallowed") or flat.get("opponentpointspergame") or
-                       flat.get("defensiveavgpoints") or flat.get("pointsallowedpergame"))
-            if off_pts:
-                raw[abbr] = {"team_name": name, "off_pts": float(off_pts), "def_pts": float(def_pts or 0)}
-        except Exception:
-            continue
+    for conference in data.get("children", []):
+        for entry in conference.get("standings", {}).get("entries", []):
+            team  = entry.get("team", {})
+            abbr  = team.get("abbreviation", "")
+            name  = team.get("displayName", abbr)
+            stats = {s["name"]: s.get("value") for s in entry.get("stats", [])}
+            off_pts = stats.get("avgPointsFor")
+            def_pts = stats.get("avgPointsAgainst")
+            if abbr and off_pts is not None and def_pts is not None:
+                raw[abbr] = {"team_name": name, "off_pts": float(off_pts), "def_pts": float(def_pts)}
 
     if not raw:
         return {}
 
+    # Higher off pts = better offense (rank 1); lower def pts allowed = better defense (rank 1)
     off_sorted = sorted(raw.keys(), key=lambda a: raw[a]["off_pts"], reverse=True)
     def_sorted = sorted(raw.keys(), key=lambda a: raw[a]["def_pts"])
     for rank, abbr in enumerate(off_sorted, 1):
@@ -343,14 +336,18 @@ def games_today() -> list:
             comp       = event["competitions"][0]
             status     = comp["status"]["type"]
             state      = status["state"]          # pre / in / post
-            status_txt = status["description"]    # "Scheduled", "In Progress", "Final"
             status_code = 1 if state == "pre" else (2 if state == "in" else 3)
 
-            # Q + clock for live
-            if state == "in":
-                period  = comp["status"].get("period", "")
-                clock   = comp["status"].get("displayClock", "")
+            if state == "pre":
+                # e.g. "6/19 - 7:30 PM EDT" → "7:30 PM EDT"
+                short = status.get("shortDetail", "")
+                status_txt = short.split(" - ", 1)[-1] if " - " in short else short or "Scheduled"
+            elif state == "in":
+                period     = comp["status"].get("period", "")
+                clock      = comp["status"].get("displayClock", "")
                 status_txt = f"Q{period} {clock}"
+            else:
+                status_txt = status.get("description", "Final")
 
             competitors = comp["competitors"]
             home = next((c for c in competitors if c["homeAway"] == "home"), competitors[0])
