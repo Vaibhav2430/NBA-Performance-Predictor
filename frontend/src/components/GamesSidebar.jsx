@@ -77,16 +77,12 @@ export default function GamesSidebar({ league }) {
               <div className="game-score">
                 {(isLive || isFinal) ? (
                   <>
-                    <span style={{ color: g.away.score > g.home.score ? 'var(--text)' : 'var(--muted)' }}>
-                      {g.away.score}
-                    </span>
+                    <span>{g.away.score}</span>
                     <span className="score-sep">–</span>
-                    <span style={{ color: g.home.score > g.away.score ? 'var(--text)' : 'var(--muted)' }}>
-                      {g.home.score}
-                    </span>
+                    <span>{g.home.score}</span>
                   </>
                 ) : (
-                  <span style={{ fontSize: '0.75rem', color: 'var(--muted)', fontWeight: 500 }}>vs</span>
+                  <span style={{ fontSize: '0.75rem', color: '#ffffff', fontWeight: 500 }}>vs</span>
                 )}
               </div>
 

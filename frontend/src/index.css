@@ -180,10 +180,11 @@ body {
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.5px;
+  color: #ffffff;
 }
 .team-record {
   font-size: 0.8rem;
-  color: var(--text);
+  color: #ffffff;
 }
 .game-score {
   display: flex;
@@ -193,6 +194,7 @@ body {
   font-weight: 800;
   letter-spacing: -0.5px;
   padding: 0 6px;
+  color: #ffffff;
 }
 .score-sep {
   font-size: 0.8rem;
