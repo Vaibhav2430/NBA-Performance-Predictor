@@ -1,12 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
-const STAT_LABELS = { PTS: 'Points', AST: 'Assists', REB: 'Rebounds' }
+const STATS = [
+  { key: 'PTS', label: 'Points',   color: '#38bdf8' },
+  { key: 'AST', label: 'Assists',  color: '#22c55e' },
+  { key: 'REB', label: 'Rebounds', color: '#f97316' },
+]
 
-export default function AccuracyPanel() {
+export default function AccuracyPanel({ league }) {
   const [open, setOpen]       = useState(false)
   const [stats, setStats]     = useState(null)
   const [loading, setLoading] = useState(false)
+  const [seeding, setSeeding] = useState(false)
+  const [seedDone, setSeedDone] = useState(false)
   const ref = useRef(null)
 
   async function load() {
@@ -21,12 +27,24 @@ export default function AccuracyPanel() {
     }
   }
 
+  async function seed() {
+    setSeeding(true)
+    setSeedDone(false)
+    try {
+      await axios.post(`/accuracy/seed?league=${league}`)
+      setSeedDone(true)
+    } catch {
+      // silent
+    } finally {
+      setSeeding(false)
+    }
+  }
+
   function toggle() {
     if (!open && !stats) load()
     setOpen(o => !o)
   }
 
-  // Close on outside click
   useEffect(() => {
     function handler(e) {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false)
@@ -35,13 +53,16 @@ export default function AccuracyPanel() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
-  const pct = stats?.pct
+  // Reset seedDone when league changes
+  useEffect(() => { setSeedDone(false) }, [league])
+
+  const overall = stats?.pct
 
   return (
     <div className="acc-wrap" ref={ref}>
       <button className="acc-trigger" onClick={toggle}>
         <span className="acc-trigger-icon">🎯</span>
-        {pct != null ? `${pct}%` : 'Accuracy'}
+        {overall != null ? `${overall}%` : 'Accuracy'}
       </button>
 
       {open && (
@@ -59,40 +80,58 @@ export default function AccuracyPanel() {
 
           {!loading && stats && stats.total > 0 && (
             <>
-              <div className="acc-overall">
-                <span className="acc-big-pct" style={{ color: pctColor(pct) }}>{pct}%</span>
-                <span className="acc-overall-sub">{stats.correct}/{stats.total} correct</span>
-              </div>
-
-              <div className="acc-stat-rows">
-                {['PTS', 'AST', 'REB'].map(stat => {
-                  const s = stats.by_stat[stat]
-                  if (!s || s.total === 0) return null
+              {/* Per-stat cards */}
+              <div className="acc-stat-cards">
+                {STATS.map(({ key, label, color }) => {
+                  const s = stats.by_stat[key]
+                  const haData = s && s.total > 0
                   return (
-                    <div key={stat} className="acc-stat-row">
-                      <span className="acc-stat-name">{STAT_LABELS[stat]}</span>
-                      <div className="acc-bar-wrap">
-                        <div
-                          className="acc-bar"
-                          style={{ width: `${s.pct ?? 0}%`, background: pctColor(s.pct) }}
-                        />
+                    <div key={key} className="acc-stat-card">
+                      <div className="acc-card-label" style={{ color }}>{label}</div>
+                      <div className="acc-card-pct" style={{ color: haData ? pctColor(s.pct) : 'var(--muted)' }}>
+                        {haData ? `${s.pct}%` : '—'}
                       </div>
-                      <span className="acc-stat-pct" style={{ color: pctColor(s.pct) }}>
-                        {s.pct ?? '—'}%
-                      </span>
-                      <span className="acc-stat-n">({s.correct}/{s.total})</span>
+                      <div className="acc-card-count">
+                        {haData ? `${s.correct}/${s.total}` : 'no data'}
+                      </div>
+                      {haData && (
+                        <div className="acc-card-bar-wrap">
+                          <div className="acc-card-bar" style={{ width: `${s.pct}%`, background: pctColor(s.pct) }} />
+                        </div>
+                      )}
                     </div>
                   )
                 })}
               </div>
 
+              {/* Overall */}
+              <div className="acc-overall-row">
+                <span className="acc-overall-label">Overall</span>
+                <span className="acc-overall-pct" style={{ color: pctColor(overall) }}>{overall}%</span>
+                <span className="acc-overall-n">{stats.correct}/{stats.total}</span>
+              </div>
+
               {stats.pending_count > 0 && (
-                <div className="acc-pending">
-                  {stats.pending_count} pending — resolves after game finishes
-                </div>
+                <div className="acc-pending">{stats.pending_count} pending result{stats.pending_count > 1 ? 's' : ''}</div>
               )}
             </>
           )}
+
+          {/* Seed button */}
+          <div className="acc-seed-row">
+            <button
+              className="acc-seed-btn"
+              onClick={seed}
+              disabled={seeding}
+            >
+              {seeding ? 'Running predictions…' : seedDone ? '✓ Done — check back later' : `Seed all ${league} players today`}
+            </button>
+            {seedDone && (
+              <div className="acc-seed-note">
+                Running in background (~2–3 min). Refresh accuracy after games finish.
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

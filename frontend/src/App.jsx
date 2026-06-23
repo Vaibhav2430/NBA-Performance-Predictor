@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios'
 import GamesSidebar from './components/GamesSidebar'
+import AccuracyCards from './components/AccuracyCards'
 import PlayerSearch from './components/PlayerSearch'
 import PropCards from './components/PropCards'
 import StatChart from './components/StatChart'
 import GameLogTable from './components/GameLogTable'
-import AccuracyPanel from './components/AccuracyPanel'
 
 export default function App() {
   const [league, setLeague]   = useState('NBA')   // 'NBA' | 'WNBA'
@@ -65,7 +65,7 @@ export default function App() {
           AI <span>Predicts</span>
         </div>
 
-        <AccuracyPanel />
+        <AccuracyCards league={league} />
 
         {/* League toggle */}
         <div className="league-toggle">

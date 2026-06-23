@@ -1,5 +1,7 @@
+import threading
 import pandas as pd
-from fastapi import FastAPI, HTTPException, Query
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from nba_api.stats.static import players as nba_players
 from nba_api.live.nba.endpoints import scoreboard as live_scoreboard
@@ -8,7 +10,14 @@ import wnba_model
 import odds
 import tracker
 
-app = FastAPI(title="NBA Stat Predictor API")
+@asynccontextmanager
+async def lifespan(_app):
+    threading.Thread(target=_seed_all, args=("WNBA",), daemon=True).start()
+    threading.Thread(target=_seed_all, args=("NBA",),  daemon=True).start()
+    yield
+
+
+app = FastAPI(title="NBA Stat Predictor API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -120,6 +129,45 @@ def accuracy_endpoint():
         tracker.save_log(log)
 
     return tracker.compute_stats(log)
+
+
+def _seed_all(league: str):
+    from datetime import date
+    all_lines = odds.fetch_lines(league)
+    if not all_lines:
+        return
+    today = str(date.today())
+    log = tracker.load_log()
+    already_logged = {e["player"] for e in log if e["date"] == today}
+
+    for pp_name, lines in all_lines.items():
+        if pp_name in already_logged:
+            continue
+        try:
+            if league == "NBA":
+                result = predict(pp_name)
+            else:
+                result = wnba_model.predict(pp_name)
+
+            # Skip players averaging under 15 min
+            game_log = result.get("game_log", [])
+            if game_log:
+                recent_min = sum(g["MIN"] for g in game_log[:5]) / min(5, len(game_log))
+                if recent_min < 15:
+                    continue
+
+            player_name = result["player"]
+            p = nba_find_player(player_name) if league == "NBA" else wnba_model.find_player(player_name)
+            if p:
+                tracker.log_prediction(player_name, p["id"], league, lines, result["predictions"])
+        except Exception:
+            continue
+
+
+@app.post("/accuracy/seed")
+def seed_accuracy(background_tasks: BackgroundTasks, league: str = Query(default="WNBA")):
+    background_tasks.add_task(_seed_all, league)
+    return {"status": "started", "league": league}
 
 
 @app.get("/games/today")
