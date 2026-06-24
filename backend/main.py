@@ -80,8 +80,8 @@ def wnba_games_today():
     return wnba_model.games_today()
 
 
-@app.get("/accuracy")
-def accuracy_endpoint():
+def _resolve_all():
+    """Fetch actual game results and mark predictions resolved. Runs in background."""
     from datetime import date
     log = tracker.load_log()
     today = str(date.today())
@@ -91,7 +91,7 @@ def accuracy_endpoint():
         if entry.get("resolved"):
             continue
         if entry["date"] >= today:
-            continue  # Game may not have been played yet
+            continue
 
         try:
             if entry["league"] == "NBA":
@@ -111,7 +111,7 @@ def accuracy_endpoint():
             pred_date = pd.Timestamp(entry["date"])
             future = df[df["GAME_DATE"] >= pred_date]
             if future.empty:
-                continue  # No game found yet on or after prediction date
+                continue
 
             game = future.iloc[0]
             actual = {
@@ -128,7 +128,11 @@ def accuracy_endpoint():
     if changed:
         tracker.save_log(log)
 
-    return tracker.compute_stats(log)
+
+@app.get("/accuracy")
+def accuracy_endpoint(background_tasks: BackgroundTasks, league: str = Query(default=None)):
+    background_tasks.add_task(_resolve_all)
+    return tracker.compute_stats(tracker.load_log(), league=league)
 
 
 def _seed_all(league: str):

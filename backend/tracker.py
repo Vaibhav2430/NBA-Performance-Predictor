@@ -56,8 +56,8 @@ def mark_resolved(entry: dict, actual: dict):
     entry["resolved"] = True
 
 
-def compute_stats(log: list) -> dict:
-    resolved = [e for e in log if e.get("resolved")]
+def compute_stats(log: list, league: str = None) -> dict:
+    resolved = [e for e in log if e.get("resolved") and (league is None or e.get("league") == league)]
     total, correct = 0, 0
     by_stat = {
         "PTS": {"correct": 0, "total": 0},

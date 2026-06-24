@@ -10,6 +10,7 @@ export default defineConfig({
       '/search':           'http://localhost:8000',
       '/games/today':      'http://localhost:8000',
       '/wnba':             'http://localhost:8000',
+      '/accuracy':         'http://localhost:8000',
     },
   },
 })

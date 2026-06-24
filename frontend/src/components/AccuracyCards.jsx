@@ -39,7 +39,7 @@ export default function AccuracyCards({ league }) {
 
   useEffect(() => {
     function fetchAndSchedule() {
-      axios.get('/accuracy').then(r => setStats(r.data)).catch(() => setStats(null))
+      axios.get(`/accuracy?league=${league}`).then(r => setStats(r.data)).catch(() => setStats(null))
       timer.current = setTimeout(fetchAndSchedule, msUntilNextFire())
     }
     fetchAndSchedule()
