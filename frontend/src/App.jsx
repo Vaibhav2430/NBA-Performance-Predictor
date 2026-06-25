@@ -62,7 +62,7 @@ export default function App() {
       <header className="header">
         <div className="logo">
           <div className="logo-icon">🏀</div>
-          AI <span>Predicts</span>
+          Court<span>Cast</span>
         </div>
 
         <AccuracyCards league={league} />
@@ -91,7 +91,7 @@ export default function App() {
           <div className="search-section">
             {!hasResults && (
               <div className="search-hero">
-                <h1>{isWNBA ? 'WNBA' : 'NBA'} Stat Predictor</h1>
+                <h1>Court<span style={{ color: 'var(--orange)' }}>Cast</span></h1>
                 <p>AI projections for points, assists &amp; rebounds — next game.</p>
               </div>
             )}

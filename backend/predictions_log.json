@@ -758,8 +758,10 @@
     "predicted": {
       "PTS": 21.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0
+    },
+    "resolved": true
   },
   {
     "player": "Rhyne Howard",
@@ -774,8 +776,11 @@
       "PTS": 20.0,
       "AST": 2.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 12.0,
+      "AST": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Gabby Williams",
@@ -790,8 +795,11 @@
       "PTS": 18.6,
       "REB": 3.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 23.0,
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Angel Reese",
@@ -806,8 +814,11 @@
       "PTS": 14.2,
       "REB": 11.5
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 10.0,
+      "REB": 12.0
+    },
+    "resolved": true
   },
   {
     "player": "Veronica Burton",
@@ -822,8 +833,11 @@
       "PTS": 13.0,
       "AST": 4.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0,
+      "AST": 7.0
+    },
+    "resolved": true
   },
   {
     "player": "Jordin Canada",
@@ -836,8 +850,10 @@
     "predicted": {
       "PTS": 13.9
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0
+    },
+    "resolved": true
   },
   {
     "player": "Cecilia Zandalasini",
@@ -850,8 +866,10 @@
     "predicted": {
       "PTS": 8.5
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 14.0
+    },
+    "resolved": true
   },
   {
     "player": "Naz Hillmon",
@@ -864,8 +882,10 @@
     "predicted": {
       "PTS": 12.3
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 2.0
+    },
+    "resolved": true
   },
   {
     "player": "Kayla Thornton",
@@ -878,8 +898,10 @@
     "predicted": {
       "PTS": 3.9
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 17.0
+    },
+    "resolved": true
   },
   {
     "player": "Caitlin Clark",
@@ -896,8 +918,12 @@
       "AST": 7.4,
       "REB": 3.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 19.0,
+      "AST": 8.0,
+      "REB": 0.0
+    },
+    "resolved": true
   },
   {
     "player": "Kelsey Mitchell",
@@ -910,8 +936,10 @@
     "predicted": {
       "PTS": 17.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 30.0
+    },
+    "resolved": true
   },
   {
     "player": "Kahleah Copper",
@@ -924,8 +952,10 @@
     "predicted": {
       "PTS": 22.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 28.0
+    },
+    "resolved": true
   },
   {
     "player": "Aliyah Boston",
@@ -940,8 +970,11 @@
       "PTS": 24.0,
       "REB": 11.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 23.0,
+      "REB": 9.0
+    },
+    "resolved": true
   },
   {
     "player": "Alyssa Thomas",
@@ -956,8 +989,11 @@
       "PTS": 14.9,
       "REB": 5.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 24.0,
+      "REB": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "DeWanna Bonner",
@@ -972,8 +1008,11 @@
       "PTS": 7.8,
       "REB": 3.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 13.0,
+      "REB": 8.0
+    },
+    "resolved": true
   },
   {
     "player": "Sophie Cunningham",
@@ -986,8 +1025,10 @@
     "predicted": {
       "PTS": 10.4
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Lexi Held",
@@ -1000,8 +1041,10 @@
     "predicted": {
       "PTS": 9.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 9.0
+    },
+    "resolved": true
   },
   {
     "player": "Monique Billings",
@@ -1014,8 +1057,10 @@
     "predicted": {
       "REB": 3.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Olivia Miles",
@@ -1032,8 +1077,12 @@
       "AST": 5.7,
       "REB": 6.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 21.0,
+      "AST": 5.0,
+      "REB": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "Natasha Howard",
@@ -1048,8 +1097,11 @@
       "PTS": 23.3,
       "REB": 6.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 21.0,
+      "REB": 15.0
+    },
+    "resolved": true
   },
   {
     "player": "Sonia Citron",
@@ -1062,8 +1114,10 @@
     "predicted": {
       "PTS": 17.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 28.0
+    },
+    "resolved": true
   },
   {
     "player": "Courtney Williams",
@@ -1080,8 +1134,12 @@
       "AST": 4.5,
       "REB": 3.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 5.0,
+      "REB": 2.0,
+      "AST": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Kayla McBride",
@@ -1094,8 +1152,10 @@
     "predicted": {
       "PTS": 14.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 19.0
+    },
+    "resolved": true
   },
   {
     "player": "Kiki Iriafen",
@@ -1110,8 +1170,11 @@
       "PTS": 18.0,
       "REB": 6.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 13.0,
+      "REB": 11.0
+    },
+    "resolved": true
   },
   {
     "player": "Shakira Austin",
@@ -1128,8 +1191,12 @@
       "AST": 2.1,
       "REB": 7.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 11.0,
+      "REB": 16.0,
+      "AST": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Michaela Onyenwere",
@@ -1142,8 +1209,10 @@
     "predicted": {
       "PTS": 10.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 2.0
+    },
+    "resolved": true
   },
   {
     "player": "Nia Coffey",
@@ -1158,8 +1227,11 @@
       "PTS": 5.6,
       "REB": 7.9
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 5.0,
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Lauren Betts",
@@ -1172,8 +1244,10 @@
     "predicted": {
       "PTS": 11.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "Georgia Amoore",
@@ -1186,8 +1260,10 @@
     "predicted": {
       "AST": 6.4
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "AST": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Sydney Taylor",
@@ -1200,8 +1276,10 @@
     "predicted": {
       "PTS": 16.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 14.0
+    },
+    "resolved": true
   },
   {
     "player": "Skylar Diggins",
@@ -1216,8 +1294,11 @@
       "PTS": 10.8,
       "AST": 4.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 15.0,
+      "AST": 6.0
+    },
+    "resolved": true
   },
   {
     "player": "Carla Leite",
@@ -1232,8 +1313,11 @@
       "PTS": 11.7,
       "AST": 7.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 10.0,
+      "AST": 6.0
+    },
+    "resolved": true
   },
   {
     "player": "A'ja Wilson",
@@ -1248,8 +1332,11 @@
       "PTS": 21.8,
       "REB": 7.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 16.0,
+      "REB": 9.0
+    },
+    "resolved": true
   },
   {
     "player": "Megan Gustafson",
@@ -1264,8 +1351,11 @@
       "PTS": 8.1,
       "REB": 3.1
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 17.0,
+      "REB": 2.0
+    },
+    "resolved": true
   },
   {
     "player": "Kamilla Cardoso",
@@ -1280,8 +1370,11 @@
       "PTS": 14.9,
       "REB": 10.3
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 13.0,
+      "REB": 8.0
+    },
+    "resolved": true
   },
   {
     "player": "Bridget Carleton",
@@ -1294,8 +1387,10 @@
     "predicted": {
       "PTS": 8.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 7.0
+    },
+    "resolved": true
   },
   {
     "player": "Sarah Ashlee Barker",
@@ -1310,8 +1405,11 @@
       "PTS": 9.0,
       "REB": 3.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 13.0,
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Gabriela Jaquez",
@@ -1326,8 +1424,11 @@
       "PTS": 5.2,
       "REB": 4.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 10.0,
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Emily Engstler",
@@ -1342,8 +1443,11 @@
       "PTS": 9.4,
       "REB": 5.9
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 10.0,
+      "REB": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "Natasha Cloud",
@@ -1358,8 +1462,11 @@
       "PTS": 13.4,
       "AST": 2.4
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 9.0,
+      "AST": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "Allisha Gray",
@@ -1372,8 +1479,10 @@
     "predicted": {
       "PTS": 21.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0
+    },
+    "resolved": true
   },
   {
     "player": "Rhyne Howard",
@@ -1390,8 +1499,12 @@
       "AST": 2.6,
       "REB": 5.8
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 12.0,
+      "REB": 5.0,
+      "AST": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Gabby Williams",
@@ -1404,8 +1517,10 @@
     "predicted": {
       "PTS": 18.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 23.0
+    },
+    "resolved": true
   },
   {
     "player": "Angel Reese",
@@ -1420,8 +1535,11 @@
       "PTS": 14.2,
       "REB": 11.5
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 10.0,
+      "REB": 12.0
+    },
+    "resolved": true
   },
   {
     "player": "Veronica Burton",
@@ -1436,8 +1554,11 @@
       "PTS": 13.0,
       "AST": 4.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0,
+      "AST": 7.0
+    },
+    "resolved": true
   },
   {
     "player": "Jordin Canada",
@@ -1452,8 +1573,11 @@
       "PTS": 13.9,
       "AST": 10.5
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 8.0,
+      "AST": 2.0
+    },
+    "resolved": true
   },
   {
     "player": "Cecilia Zandalasini",
@@ -1466,8 +1590,10 @@
     "predicted": {
       "PTS": 8.5
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 14.0
+    },
+    "resolved": true
   },
   {
     "player": "Naz Hillmon",
@@ -1482,8 +1608,11 @@
       "PTS": 12.3,
       "REB": 5.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 2.0,
+      "REB": 2.0
+    },
+    "resolved": true
   },
   {
     "player": "Kayla Thornton",
@@ -1496,8 +1625,10 @@
     "predicted": {
       "REB": 6.4
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Breanna Stewart",
@@ -1512,8 +1643,11 @@
       "PTS": 21.7,
       "REB": 8.8
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 20.0,
+      "REB": 6.0
+    },
+    "resolved": true
   },
   {
     "player": "Jackie Young",
@@ -1526,8 +1660,10 @@
     "predicted": {
       "PTS": 19.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 19.0
+    },
+    "resolved": true
   },
   {
     "player": "Jonquel Jones",
@@ -1542,8 +1678,11 @@
       "PTS": 11.2,
       "REB": 8.3
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 14.0,
+      "REB": 5.0
+    },
+    "resolved": true
   },
   {
     "player": "Chelsea Gray",
@@ -1556,8 +1695,10 @@
     "predicted": {
       "PTS": 19.3
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 11.0
+    },
+    "resolved": true
   },
   {
     "player": "Marina Mabrey",
@@ -1654,8 +1795,12 @@
       "AST": 4.3,
       "REB": 6.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 16.0,
+      "REB": 10.0,
+      "AST": 4.0
+    },
+    "resolved": true
   },
   {
     "player": "Natisha Hiedeman",
@@ -1686,8 +1831,11 @@
       "PTS": 10.0,
       "REB": 1.7
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 0.0,
+      "REB": 3.0
+    },
+    "resolved": true
   },
   {
     "player": "Awa Fam",
@@ -1732,8 +1880,10 @@
     "predicted": {
       "PTS": 11.0
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 12.0
+    },
+    "resolved": true
   },
   {
     "player": "Paige Bueckers",
@@ -1812,8 +1962,11 @@
       "PTS": 10.6,
       "REB": 7.2
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 7.0,
+      "REB": 1.0
+    },
+    "resolved": true
   },
   {
     "player": "Kaitlyn Chen",
@@ -1826,8 +1979,10 @@
     "predicted": {
       "PTS": 4.6
     },
-    "actual": {},
-    "resolved": false
+    "actual": {
+      "PTS": 0.0
+    },
+    "resolved": true
   },
   {
     "player": "Rae Burrell",
@@ -1839,6 +1994,818 @@
     },
     "predicted": {
       "PTS": 15.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Gabriela Jaquez",
+    "player_id": "4858656",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 9.5
+    },
+    "predicted": {
+      "PTS": 6.8
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Natasha Cloud",
+    "player_id": "2529137",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 8.5
+    },
+    "predicted": {
+      "PTS": 8.9
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Marina Mabrey",
+    "player_id": "3904576",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 22.5,
+      "AST": 4.0
+    },
+    "predicted": {
+      "PTS": 17.0,
+      "AST": 3.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Nneka Ogwumike",
+    "player_id": "1068",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 18.5,
+      "REB": 9.0
+    },
+    "predicted": {
+      "PTS": 14.5,
+      "REB": 11.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Dearica Hamby",
+    "player_id": "2566106",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5,
+      "REB": 8.0,
+      "AST": 2.5
+    },
+    "predicted": {
+      "PTS": 12.0,
+      "AST": 2.7,
+      "REB": 8.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Rae Burrell",
+    "player_id": "4398764",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5
+    },
+    "predicted": {
+      "PTS": 15.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Isabelle Harrison",
+    "player_id": "2566453",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 14.5,
+      "REB": 6.5
+    },
+    "predicted": {
+      "PTS": 18.4,
+      "REB": 8.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Ariel Atkins",
+    "player_id": "3146151",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 10.5
+    },
+    "predicted": {
+      "PTS": 8.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Maria Conde",
+    "player_id": "3910470",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 10.5,
+      "REB": 4.5
+    },
+    "predicted": {
+      "PTS": 7.5,
+      "REB": 3.9
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Erica Wheeler",
+    "player_id": "2491214",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 10.0,
+      "AST": 5.0
+    },
+    "predicted": {
+      "PTS": 4.6,
+      "AST": 4.9
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Nyara Sabally",
+    "player_id": "4398768",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 9.0,
+      "REB": 5.0
+    },
+    "predicted": {
+      "PTS": 16.4,
+      "REB": 5.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Julie Allemand",
+    "player_id": "4001679",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "AST": 5.5
+    },
+    "predicted": {
+      "AST": 5.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Breanna Stewart",
+    "player_id": "2998928",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 18.5,
+      "REB": 8.0
+    },
+    "predicted": {
+      "PTS": 21.7,
+      "REB": 8.8
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Dominique Malonga",
+    "player_id": "5220150",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5,
+      "REB": 8.5,
+      "AST": 1.5
+    },
+    "predicted": {
+      "PTS": 25.6,
+      "AST": 1.3,
+      "REB": 9.9
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Sabrina Ionescu",
+    "player_id": "4066533",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5,
+      "REB": 5.0,
+      "AST": 5.0
+    },
+    "predicted": {
+      "PTS": 9.1,
+      "AST": 4.3,
+      "REB": 6.7
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Natisha Hiedeman",
+    "player_id": "3906753",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 15.5,
+      "AST": 5.0,
+      "REB": 2.5
+    },
+    "predicted": {
+      "PTS": 20.7,
+      "AST": 6.9,
+      "REB": 2.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jonquel Jones",
+    "player_id": "2999101",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 14.0,
+      "REB": 8.5
+    },
+    "predicted": {
+      "PTS": 11.2,
+      "REB": 8.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Satou Sabally",
+    "player_id": "4281929",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.5,
+      "REB": 4.0
+    },
+    "predicted": {
+      "PTS": 10.0,
+      "REB": 1.7
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Flau'jae Johnson",
+    "player_id": "4698736",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.5,
+      "REB": 4.0
+    },
+    "predicted": {
+      "PTS": 12.0,
+      "REB": 6.0
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Awa Fam",
+    "player_id": "5345325",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.0,
+      "REB": 6.0
+    },
+    "predicted": {
+      "PTS": 8.5,
+      "REB": 7.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Leonie Fiebich",
+    "player_id": "4683006",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 9.5
+    },
+    "predicted": {
+      "PTS": 11.0
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Zia Cooke",
+    "player_id": "4432832",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 7.5
+    },
+    "predicted": {
+      "PTS": 13.0
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Pauline Astier",
+    "player_id": "5345320",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 7.0
+    },
+    "predicted": {
+      "PTS": 14.7
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jade Melbourne",
+    "player_id": "5017726",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 6.0
+    },
+    "predicted": {
+      "PTS": 5.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "A'ja Wilson",
+    "player_id": "3149391",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 25.5,
+      "REB": 9.5
+    },
+    "predicted": {
+      "PTS": 21.8,
+      "REB": 7.6
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Paige Bueckers",
+    "player_id": "4433730",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 18.5,
+      "AST": 5.5,
+      "REB": 4.0
+    },
+    "predicted": {
+      "PTS": 18.6,
+      "AST": 6.5,
+      "REB": 4.7
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jackie Young",
+    "player_id": "4065870",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5,
+      "REB": 4.0
+    },
+    "predicted": {
+      "PTS": 19.7,
+      "REB": 4.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Arike Ogunbowale",
+    "player_id": "3904577",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 14.5
+    },
+    "predicted": {
+      "PTS": 12.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Azzi Fudd",
+    "player_id": "4433790",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.5
+    },
+    "predicted": {
+      "PTS": 16.6
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jessica Shepard",
+    "player_id": "3906949",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.0,
+      "REB": 11.5,
+      "AST": 5.0
+    },
+    "predicted": {
+      "PTS": 14.7,
+      "AST": 7.7,
+      "REB": 10.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Chelsea Gray",
+    "player_id": "2529122",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.5,
+      "AST": 6.5,
+      "REB": 4.0
+    },
+    "predicted": {
+      "PTS": 19.3,
+      "AST": 4.7,
+      "REB": 4.6
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "NaLyssa Smith",
+    "player_id": "4398776",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.0,
+      "REB": 6.0
+    },
+    "predicted": {
+      "PTS": 10.6,
+      "REB": 7.2
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jewell Loyd",
+    "player_id": "2987869",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 8.5
+    },
+    "predicted": {
+      "PTS": 10.4
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Sydney Taylor",
+    "player_id": "4594786",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5
+    },
+    "predicted": {
+      "PTS": 16.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Skylar Diggins",
+    "player_id": "2491205",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 15.5,
+      "AST": 5.5
+    },
+    "predicted": {
+      "PTS": 15.5,
+      "AST": 5.6
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Megan Gustafson",
+    "player_id": "3934218",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 14.5
+    },
+    "predicted": {
+      "PTS": 8.6
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Carla Leite",
+    "player_id": "5208982",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 14.5
+    },
+    "predicted": {
+      "PTS": 12.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Kamilla Cardoso",
+    "player_id": "4433405",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.5,
+      "AST": 2.5
+    },
+    "predicted": {
+      "PTS": 11.9,
+      "AST": 1.8
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Bridget Carleton",
+    "player_id": "3906972",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 12.5,
+      "REB": 3.5
+    },
+    "predicted": {
+      "PTS": 7.1,
+      "REB": 4.2
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Sarah Ashlee Barker",
+    "player_id": "4703794",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.5,
+      "REB": 4.5
+    },
+    "predicted": {
+      "PTS": 8.8,
+      "REB": 3.1
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Emily Engstler",
+    "player_id": "4398729",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 8.5
+    },
+    "predicted": {
+      "PTS": 10.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Sonia Citron",
+    "player_id": "4433524",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 17.5,
+      "REB": 3.5
+    },
+    "predicted": {
+      "PTS": 19.1,
+      "REB": 3.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Kiki Iriafen",
+    "player_id": "4898384",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 15.5,
+      "REB": 8.5
+    },
+    "predicted": {
+      "PTS": 17.0,
+      "REB": 7.2
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Shakira Austin",
+    "player_id": "4398911",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.5
+    },
+    "predicted": {
+      "PTS": 8.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Brittney Griner",
+    "player_id": "2490553",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 12.0
+    },
+    "predicted": {
+      "PTS": 9.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Allisha Gray",
+    "player_id": "3058901",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 18.5
+    },
+    "predicted": {
+      "PTS": 20.8
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Rhyne Howard",
+    "player_id": "4398674",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 18.5,
+      "REB": 4.5
+    },
+    "predicted": {
+      "PTS": 18.1,
+      "REB": 4.2
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Gabby Williams",
+    "player_id": "3142328",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 16.5,
+      "REB": 3.5
+    },
+    "predicted": {
+      "PTS": 23.1,
+      "REB": 3.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Angel Reese",
+    "player_id": "4433402",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 13.5,
+      "REB": 11.5
+    },
+    "predicted": {
+      "PTS": 15.5,
+      "REB": 12.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Veronica Burton",
+    "player_id": "4398935",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 12.5,
+      "AST": 5.5,
+      "REB": 3.5
+    },
+    "predicted": {
+      "PTS": 8.1,
+      "AST": 5.3,
+      "REB": 4.3
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Jordin Canada",
+    "player_id": "3142250",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 11.5,
+      "AST": 6.5,
+      "REB": 3.5
+    },
+    "predicted": {
+      "PTS": 10.0,
+      "AST": 6.5,
+      "REB": 3.5
+    },
+    "actual": {},
+    "resolved": false
+  },
+  {
+    "player": "Kayla Thornton",
+    "player_id": "2529622",
+    "league": "WNBA",
+    "date": "2026-06-25",
+    "lines": {
+      "PTS": 8.5,
+      "REB": 5.5
+    },
+    "predicted": {
+      "PTS": 8.8,
+      "REB": 5.5
     },
     "actual": {},
     "resolved": false
