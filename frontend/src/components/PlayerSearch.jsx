@@ -7,13 +7,14 @@ export default function PlayerSearch({ onSearch, loading, league }) {
   const [showSugg, setShowSugg] = useState(false)
   const debounce    = useRef(null)
   const didMount    = useRef(false)
+  const submitted   = useRef(false)
 
   async function fetchSuggestions(q) {
     try {
       const endpoint = league === 'WNBA' ? '/wnba/search' : '/search'
       const res = await axios.get(endpoint, { params: { q } })
       setSugg(res.data)
-      setShowSugg(true)
+      if (!submitted.current) setShowSugg(true)
     } catch {
       setSugg([])
     }
@@ -30,6 +31,8 @@ export default function PlayerSearch({ onSearch, loading, league }) {
     if (!t) return
     setQuery(t)
     setShowSugg(false)
+    setSugg([])
+    submitted.current = true
     onSearch(t)
   }
 
@@ -38,6 +41,7 @@ export default function PlayerSearch({ onSearch, loading, league }) {
       didMount.current = true
       return
     }
+    if (submitted.current) return
     if (suggestions.length > 0) {
       setShowSugg(true)
     } else {
@@ -54,7 +58,7 @@ export default function PlayerSearch({ onSearch, loading, league }) {
         <input
           className="search-input"
           value={query}
-          onChange={e => setQuery(e.target.value)}
+          onChange={e => { submitted.current = false; setQuery(e.target.value) }}
           onKeyDown={e => e.key === 'Enter' && submit()}
           onFocus={handleFocus}
           onBlur={() => setTimeout(() => setShowSugg(false), 150)}
